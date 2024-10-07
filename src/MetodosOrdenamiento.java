@@ -5,7 +5,7 @@ public class MetodosOrdenamiento {
     // Método de burbuja tradicional con errores
     // Error encontrado: El metodo retorna un arreglo vacio (return new int[] {})
     //en lugar del arreglo ordenado
-    //Correcion: Cambiar el retunr new int[] {}
+    //Correcion: Cambiar el return new int[] {}
     //por return arreglo
     public int[] burbujaTradicional(int[] arregloOriginal) {
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
@@ -185,11 +185,11 @@ public class MetodosOrdenamiento {
         int[] arreglo = Arrays.copyOf(arregloOriginal, arregloOriginal.length);
         for (int j = 1; j < arreglo.length; j++) {
             int key = arreglo[j];
-            int i = j;
+            int i = j - 1;
 
-            while (j > 0 && arreglo[j] < key) {
-                arreglo[j + 1] = arreglo[j];
-                j++;
+            while (i >= 0 && arreglo[i] > key) {
+                arreglo[i + 1] = arreglo[i];
+                i--;
             }
             arreglo[i + 1] = key;
         }
